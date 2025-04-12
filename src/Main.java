@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.util.List;
+import java.util.Map;
 
 public class Main extends StringMethods {
     public static void main(String[] args) {
@@ -10,7 +13,7 @@ public class Main extends StringMethods {
 
         //2
         String sentences = "Madam, I am Adam and racecar is cool.";
-        String result1 = Palindrome(sentences);
+        String result1 = PalindromeMethods(sentences);
         System.out.println("Завдання 2: Полідром:");
         System.out.println(result1);
 
@@ -34,5 +37,8 @@ public class Main extends StringMethods {
         } else {
             System.out.println(a + " і " + b + " не є анаграмами.");
         }
+
+
+
     }
 }

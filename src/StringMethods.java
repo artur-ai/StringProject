@@ -5,27 +5,28 @@ public class StringMethods {
         text = text.replaceAll("(?i)java", "python");
         String[] sentence = text.split("\\. ");
         for(int i = 0; i < sentence.length; i++){
-            StringBuilder sb = new StringBuilder(sentence[i]);
-            sb.setCharAt(0, Character.toUpperCase(sb.charAt(0)));
-            sentence[i] = sb.toString();
+            StringBuilder stringBuilder = new StringBuilder(sentence[i]);
+            stringBuilder.setCharAt(0, Character.toUpperCase(stringBuilder.charAt(0)));
+            sentence[i] = stringBuilder.toString();
         }
         return String.join(". ", sentence);
     }
 
-    public static String Palindrome(String sentences){
-        StringBuilder sb = new StringBuilder();
+    public static String PalindromeMethods(String sentences){
+        StringBuilder stringBuilder = new StringBuilder();
         String[] words = sentences.split(" ");
         for(int i = 0; i < words.length; i++){
             String cleanWords = words[i].replaceAll("[^a-zA-Z]", "").toLowerCase();
             if(isPalindrome(cleanWords)&& cleanWords.length() > 1){
-                sb.append(words[i]).append(" is palindrome \n");
+                stringBuilder.append(words[i]).append(" is palindrome \n");
             }
         }
-        return sb.toString();
+        return stringBuilder.toString();
     }
 
-    public static boolean isPalindrome(String s){
-        return s.equals(new StringBuilder(s).reverse().toString());
+    public static boolean isPalindrome(String string){
+        
+        return string.equals(new StringBuilder(string).reverse().toString());
     }
 
 
@@ -40,17 +41,17 @@ public class StringMethods {
         return result.toString().trim();
     }
 
-    public static boolean areAnagrams(String s1, String s2) {
-        if (s1.length() != s2.length()) {
+    public static boolean areAnagrams(String stringFirst, String stringSecond) {
+        if (stringFirst.length() != stringSecond.length()) {
             return false;
         }
 
-        char[] array1 = s1.toCharArray();
-        char[] array2 = s2.toCharArray();
+        char[] arrayFirst = stringFirst.toCharArray();
+        char[] arraySecond = stringSecond.toCharArray();
 
-        Arrays.sort(array1);
-        Arrays.sort(array2);
+        Arrays.sort(arrayFirst);
+        Arrays.sort(arraySecond);
 
-        return Arrays.equals(array1, array2);
+        return Arrays.equals(arrayFirst, arraySecond);
     }
 }
